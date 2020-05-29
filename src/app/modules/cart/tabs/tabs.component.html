@@ -1,0 +1,106 @@
+<div id="exTab1" class="container">
+  <ul class="row nav nav-pills editTab">
+    <li class="active col-xl-4">
+      <a>phần ăn đã chọn</a>
+    </li>
+    <li class="col-xl-4">
+      <a>thông tin giao hàng</a>
+    </li>
+    <li class="col-xl-4">
+      <a>xác nhận đơn hàng</a>
+    </li>
+  </ul>
+
+  <div class="row tab-content clearfix">
+    <div class="tab-pane active table_pay" id="1a" style="width:100%">
+      <table style="width:100%">
+        <tr class="row tb_header">
+          <th class="col-xl-6">thông tin sản phẩm</th>
+          <th class="col-xl-2">đơn giá</th>
+          <th class="col-xl-2">số lượng</th>
+          <th class="col-xl-2 last">thành tiền</th>
+        </tr>
+        <tr *ngIf="data.length == 0" class="cart_empty">
+          <div class="container">
+            <div class="row image">
+              <img src="/assets/img/mennu_food/cart-empty.png" />
+            </div>
+            <div class="row contact">
+              <p>Không có sản phẩm nào trong giỏ hàng của bạn!</p>
+            </div>
+            <div class="row sum_cart">
+              <span>tổng thanh toán:</span>
+              <p class="price"><span>0</span>VNĐ</p>
+            </div>
+            <div class="row btn">
+              <button class="btn_pay">
+                đặt hàng
+              </button>
+            </div>
+          </div>
+        </tr>
+        <tr *ngIf="data.length > 0" class="cart_Item">
+          <app-item
+            *ngFor="let item of data"
+            name="{{ item['data']['name'] }}"
+            price="{{ item['data']['price'] }}"
+            img="{{ item['data']['img'] }}"
+            number="{{ item['number'] }}"
+            info="{{ item['data']['info'].join('*') }}"
+            id="{{ item['data']['uid'] }}"
+            table="{{ item['table'] }}"
+            (buttonClicked)="onChangeNumber($event)"
+            (buttonDelete)="onDeleteItem($event)"
+          ></app-item>
+        </tr>
+        <tr *ngIf="data.length > 0" class="summit_Buy">
+          <a
+            [routerLink]="['/popup-footer']"
+            routerLinkActive="router-link-active"
+            class="more"
+          >
+            <div class="row_header">
+              <p>
+                <i class="fas fa-bell"></i> Mời bạn mua thêm<span> món lẻ</span>
+              </p>
+            </div>
+            <span class="row_bottom"><i class="fas fa-chevron-right"></i></span>
+          </a>
+          <div class="order">
+            <div class="payment">
+              <p class="title">GIÁ TRỊ ĐƠN HÀNG:</p>
+              <p class="price">
+                <span class="number">{{ total }}</span
+                >.000<span class="vnd">VNĐ</span>
+              </p>
+            </div>
+            <div class="payment">
+              <p class="title">PHÍ GIAO HÀNG:</p>
+              <p class="price">
+                <span class="number">10</span>.000<span class="vnd">VNĐ</span>
+              </p>
+            </div>
+            <div class="payment" id="total">
+              <p class="title">TỔNG THANH TOÁN:</p>
+              <p class="price">
+                <span class="number">{{ total-10 }}</span
+                >.000<span class="vnd">VNĐ</span>
+              </p>
+            </div>
+            <div class="summit_order">
+              <a href="#2a" data-toggle="tab"
+                ><button (click)="onSubmit()">ĐẶT HÀNG</button></a
+              >
+            </div>
+          </div>
+        </tr>
+      </table>
+    </div>
+    <div class="tab-pane" id="2a" style="width:100%">
+      <app-shipment></app-shipment>
+    </div>
+    <div class="tab-pane" id="3a" style="width:100%">
+      <app-confirm></app-confirm>
+    </div>
+  </div>
+</div>

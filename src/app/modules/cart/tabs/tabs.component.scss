@@ -1,0 +1,227 @@
+.editTab {
+  margin-top: 50px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+  li {
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    a {
+      font-weight: bolder;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #7d7d7d;
+      text-decoration: none;
+    }
+  }
+  li::before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-left: 10px solid #dcdcdc;
+    position: absolute;
+    top: 50%;
+    margin-top: -26px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 3;
+  }
+  li::after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-left: 10px solid #fff;
+    position: absolute;
+    top: 50%;
+    margin-top: -26px;
+    left: 100%;
+    z-index: 3;
+  }
+  .active {
+    background: #f1022a;
+    a {
+      color: #fff;
+    }
+  }
+  .active::after {
+    border-left: 10px solid #f1022a;
+  }
+}
+
+#exTab1 .tab-content {
+  color: white;
+  background: #fff;
+  margin-top: 20px;
+  padding: 0px 15px;
+  border: 1px #7d7d7d solid;
+  border-radius: 5px;
+}
+.table_pay {
+  table {
+    .tb_header {
+      background: #f1022a;
+      border: 1px #f1022a solid;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      th {
+        height: 50px;
+        color: white;
+        font-size: 20px;
+        font-weight: bolder;
+        text-align: center;
+        text-transform: uppercase;
+        padding-top: 10px;
+        border-right: 0.5px black solid;
+      }
+      .last {
+        border-right: none;
+      }
+    }
+    .cart_empty {
+      .image {
+        img {
+          margin: 30px auto;
+        }
+      }
+      .contact {
+        p {
+          margin: 0 auto;
+          font-size: 18px;
+          color: black;
+        }
+      }
+      .sum_cart {
+        color: black;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30px;
+        span {
+          font-size: 20px;
+          text-transform: uppercase;
+        }
+        .price {
+          color: #f1022a;
+          font-size: 20px;
+          font-weight: 900;
+          margin-left: 150px;
+          span {
+            font-size: 25px;
+            margin-right: 5px;
+          }
+        }
+      }
+      .btn {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        box-shadow: none;
+        .btn_pay {
+          font-size: 20px;
+          font-weight: 900;
+          text-transform: uppercase;
+          color: white;
+          background: #f1022a;
+          border: 1px #f1022a solid;
+          border-radius: 5px;
+          width: 170px;
+          height: 42px;
+        }
+      }
+    }
+    .summit_Buy {
+      .more {
+        color: #f1022a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f8f8f5;
+        border: #f1022a 1px dashed;
+        border-radius: 5px;
+        text-decoration: none;
+        p {
+          margin: auto 15px;
+          font-size: 18px;
+          span {
+            font-weight: 900px;
+          }
+        }
+        .row_header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 55px;
+          i {
+            margin-right: 10px;
+          }
+          span {
+            font-weight: 900px;
+          }
+        }
+        .row_bottom {
+          margin-right: 30px;
+          font-size: 20px;
+        }
+      }
+      .order {
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+        margin-top: 50px;
+        .payment {
+          display: flex;
+          justify-content: flex-end;
+          .price {
+            margin-left: 80px;
+            .number {
+              font-weight: 600;
+              font-size: 20px;
+            }
+            .vnd {
+              font-weight: 500;
+              margin-left: 10px;
+            }
+          }
+        }
+        #total {
+          font-size: 22px;
+          .price {
+            color: #f1022a;
+            font-weight: bolder;
+            .number {
+              font-size: 24px;
+            }
+            .vnd {
+              margin-left: 10px;
+              font-weight: 900;
+            }
+          }
+        }
+        .summit_order {
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 30px;
+          button {
+            width: 170px;
+            height: 42px;
+            background: #f1022a;
+            border: 1px #f1022a solid;
+            border-radius: 5px;
+            color: white;
+            font-size: 20px;
+            font-weight: bolder;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

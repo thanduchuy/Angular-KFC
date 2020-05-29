@@ -1,0 +1,22 @@
+.text {
+  display: flex;
+  justify-content: space-between;
+  padding-inline-start: 15%;
+  padding-inline-end: 20%;
+  label {
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 6px;
+    span {
+      color:#f1022a;
+      margin-left: 10px;
+    }
+  }
+  input {
+    width: 424px;
+    height: 42px;
+    border: 1px #818285 solid;
+    border-radius: 7px;
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,23 @@
+@import '../variable.scss';
+* {
+  font-family: 'Roboto', sans-serif;
+}
+ul {
+  list-style: none;
+}
+.carousel-control-prev-icon {
+  opacity: 0!important;
+}
+
+.carousel-control-next-icon {
+  opacity: 0!important;
+}
+.carousel-indicators li {
+  width : 15px!important;
+  height : 15px!important;
+  opacity: 1!important;
+  background-color: white;
+}
+.carousel-indicators .active {
+  background-color: $red;
+}

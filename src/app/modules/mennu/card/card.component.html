@@ -1,0 +1,31 @@
+<div class="food">
+  <div class="parent">
+    <div class="img" [ngStyle]="{'background-image':'url('+img+')'}"></div>
+  </div>
+  <div class="container">
+    <p class="row name">{{name}}</p>
+    <div class="row content_bot">
+      <p class="price"><span class='money'>{{price}}</span>.000<span class='vnd'>VNĐ</span></p>
+      <button (click)='onSumbmit()'><i class="fas fa-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+ <!-- modal -->
+ <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+
+  <app-popup
+  like='{{like}}'
+  name='{{name}}'
+  price='{{price}}'
+  info='{{info}}'
+  img='{{img}}'
+  uid='{{uid}}'
+  nameTable='{{nameTable}}'
+  (Close)='onClose($event)'
+  ></app-popup>
+
+  </div><!-- /.modal-dialog -->
+
+<!-- /.modal !-->
+

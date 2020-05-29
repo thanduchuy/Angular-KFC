@@ -1,0 +1,132 @@
+<div *ngIf="onLogin" class="Shipment_Details">
+  <div class="row header_detail">
+    <h3>thông tin giao hàng</h3>
+  </div>
+  <div class="row form_detail">
+    <form [formGroup]="formGroup">
+      <app-input-shipment
+        value="Họ và tên"
+        default="{{ name }}"
+        formControlName="name"
+        ngDefaultControl
+      ></app-input-shipment>
+      <app-input-shipment
+        value="Địa chỉ (Số nhà - Tên đường):"
+        formControlName="address"
+        ngDefaultControl
+      ></app-input-shipment>
+      <div class="local">
+        <select class="City" formControlName="city" (change)="onChangeCity()">
+          <option selected="selected">Tỉnh/Thành Phố</option>
+          <option
+            value="{{ item.code + ',' + item.name }}"
+            *ngFor="let item of dataCitys"
+            >{{ item.name }}</option
+          >
+        </select>
+        <select
+          [className]="onClickDistict ? 'disabled' : ''"
+          formControlName="distict"
+          (change)="onChangeDistict()"
+        >
+          <option selected="selected">Quận/Huyện</option>
+          <option
+            value="{{ item.code + ',' + item.name }}"
+            *ngFor="let item of dataDistict"
+            >{{ item.name }}</option
+          >
+        </select>
+        <select
+          [className]="onClickWard ? 'disabled' : ''"
+          formControlName="ward"
+        >
+          <option selected="selected">Phường</option>
+          <option value="{{ item.name }}" *ngFor="let item of dataWard">{{
+            item.name
+          }}</option>
+        </select>
+        <app-input-shipment
+          value="Điện thoại:"
+          formControlName="phone"
+          ngDefaultControl
+        ></app-input-shipment>
+        <app-input-shipment
+          value="Email"
+          default="{{ gmail }}"
+          formControlName="email"
+          ngDefaultControl
+        ></app-input-shipment>
+        <a href="#3a" data-toggle="tab"
+          ><button (click)="onSubmit()">
+            <i class="fas fa-shipping-fast"></i>giao hàng đến địa chỉ này
+          </button></a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+<div class="login_Details" *ngIf="!onLogin">
+  <div class="row nav nav-pills choose">
+    <a href="#1a" data-toggle="tab" class="active col-xl-5  choose_item"
+      ><span><i class="fas fa-user"></i></span>đăng nhập bằng tài khoản kfc</a
+    >
+    <a href="#1a" class="col-xl-5 choose_item" data-toggle="tab"
+      ><span><i class="fas fa-shopping-cart"></i></span> hàng không cần tài
+      khoản</a
+    >
+  </div>
+  <div class="row login_form">
+    <form [formGroup]="formLogin">
+      <input type="text" placeholder="Email" formControlName="email" />
+      <input
+        type="password"
+        placeholder="Mật khẩu"
+        formControlName="password"
+      />
+      <span
+        *ngIf="
+          formLogin.controls['email'].invalid &&
+          formLogin.controls['email'].touched
+        "
+      >
+        email is invalid
+      </span>
+      <div class="form_active">
+        <div class="forget">
+          <a href="#">Quên mật khẩu ?</a>
+          <div class="submit">
+            <input type="checkbox" />
+            <p>Ghi nhớ</p>
+          </div>
+        </div>
+        <button
+          type="submit"
+          (click)="OnSignUp()"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          Đăng Nhập
+        </button>
+      </div>
+      <div class="facebook">
+        <span><i class="fab fa-facebook-f"></i></span>
+        <a href="#">Đăng nhập bằng Facebook</a>
+      </div>
+      <div class="google">
+        <span><i class="fab fa-google-plus-g"></i></span>
+        <a href="#">Đăng nhập bằng Google</a>
+      </div>
+      <div class="row title">
+        <div class="footer_title">
+          <span>Bạn chưa có tài khoản?</span>
+        </div>
+      </div>
+      <a
+        [routerLink]="['/member']"
+        routerLinkActive="router-link-active"
+        class="register"
+        >Đăng ký ngay</a
+      >
+    </form>
+  </div>
+</div>

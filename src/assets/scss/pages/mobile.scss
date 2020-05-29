@@ -1,0 +1,144 @@
+@media only screen and (max-width: 736px) {
+  header {
+    border: none;
+    height: 70px;
+    .container {
+      padding-top: 10px;
+    }
+    .header_form {
+      display: none;
+    }
+    .logo {
+      display: none;
+
+    }
+    .giaohang {
+      display: inline-block;
+    }
+    .mennu {
+      ul {
+        li{
+          display: none;
+        }
+        .icon_kfc {
+          display: flex;
+          .mobile_icon {
+            display: inline-block;
+            font-size: 30px;
+            margin-right: 10px;
+            margin-left: 10px;
+            color: white;
+          }
+          .mobile_img {
+            display: inline-block;
+            position: absolute;
+            right: 20px;
+          }
+          .fa-shopping-cart {
+            color: $yealow;
+            font-size: 30px;
+            display: inline-block;
+          }
+          img {
+            width: 90px;
+            height: 26px;
+          }
+        }
+        .cart {
+          width: 150px;
+          padding: 0 auto;
+          display: none;
+          a {
+            color: $red;
+            display: none;
+          }
+        }
+      }
+
+    }
+    .mennu_mobile {
+      display: inline-block;
+      z-index: 9999;
+    }
+  }
+
+  .slider {
+    margin-top: 0px;
+  }
+  .mennufood{
+    z-index: 1000;
+    position: inherit;
+    .slider_food {
+      .title_mobile {
+        display: block;
+        font-weight: bolder;
+      }
+      margin: 30px auto;
+    }
+  }
+  .choose_kfc {
+    .container {
+      background: #C2272D;
+      height: 350px;
+      p {
+        width: 320px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .footer_header {
+    .icons {
+      margin-left: 10px;
+    }
+    .main {
+      margin-bottom: 50px;
+      form {
+        label {
+          margin-left: 30px;
+          display: block;
+        }
+        input {
+          display: inline-block;
+          margin-left: 30px;
+          margin-right: 5px;
+          width: 160px;
+        }
+        button {
+
+        }
+      }
+
+    }
+    .end {
+      background: #E4002B;
+      position: inherit;
+      ul {
+        flex-direction: colum;
+        display: initial;
+        padding-inline-start: 0;
+        li {
+          display: block;
+          border-left: none;
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+  .footer_end {
+    height: 400px;
+    padding-top: 20px;
+    ul {
+      .coppy {
+        position: absolute;
+        bottom:-130px;
+      }
+    }
+    .alert {
+      justify-content: flex-start;
+    }
+  }
+  }
+
+
+
+

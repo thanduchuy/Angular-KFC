@@ -1,0 +1,53 @@
+.mennu_food {
+  background: $background;
+  #exTab1 {
+    .editMennu {
+      display: flex;
+      justify-content: center;
+      li {
+        background: white;
+        border: 0.5px $gray solid;
+        height: 53px;
+        text-align: center;
+        padding-top: 15px;
+        a {
+          color: black;
+          font-size: 18px;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: bolder;
+        }
+      }
+      li:hover {
+        background: $red;
+        border: 0.5px $red solid;
+        a {
+          color: white;
+        }
+      }
+      li:hover::before {
+        content: " ";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -7px;
+        border-top: 8px dashed #e4002b;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+      }
+    }
+    .tab-content {
+      .tab-pane {
+        .item {
+          margin: 40px -25px;
+          .col-xl-4 {
+            padding-left: 9px;
+            padding-right: 9px;
+          }
+        }
+      }
+    }
+  }
+}

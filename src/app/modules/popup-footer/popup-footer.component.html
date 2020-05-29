@@ -1,0 +1,69 @@
+<div class="popup">
+  <div class="popup_banner"></div>
+  <div class="popup_title">
+    <div class="container">
+      <div class="row decorate">
+        <span></span>
+        <span></span>
+        <span class="last"></span>
+      </div>
+      <div class="row title">
+        <h1>thực đơn</h1>
+      </div>
+    </div>
+  </div>
+  <!-- Button trigger modal -->
+  <div class="backdrop" [ngStyle]="{ display: display }"></div>
+
+  <div
+    class="modal"
+    tabindex="-1"
+    role="dialog"
+    [ngStyle]="{ display: display }"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="/assets/img/img-location.png" alt="" srcset="" />
+          <div class="content">
+            <div class="row content_head">
+              <div class="col-xl-4">
+                <img src="/assets/img/find-kfc-icon.png" alt="" />
+              </div>
+              <div class="col-xl-8">
+                <p>
+                  vui lòng <span>chọn khu vực</span> quý khách muốn đặt hàng
+                </p>
+              </div>
+            </div>
+            <div class="row select_location">
+              <div class="col-xl-8 dropdown">
+                <form [formGroup]="myGroup">
+                  <select name="" id="" formControlName="select">
+                    <option selected="selected">Tỉnh/Thành Phố</option>
+                    <option *ngFor="let item of citys" value="{{ item }}">{{
+                      item
+                    }}</option>
+                  </select>
+                </form>
+              </div>
+              <div class="col-xl-4 submit">
+                <button
+                  type="submit"
+                  (click)="OnSubmit()"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  TIẾP TỤC
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal !-->
+</div>

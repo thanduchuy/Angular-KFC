@@ -1,0 +1,91 @@
+<div class="member_banner"></div>
+<div class="member_spans">
+  <div class="container">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>
+
+<div class="member_form">
+  <div class="container">
+    <h2>đăng ký thành viên</h2>
+    <p>Vui lòng điền đầy đủ thông tin cá nhân bên dưới.</p>
+    <form [formGroup]="formGroup">
+      <app-input
+        *ngFor="let item of inputs"
+        title="{{ item.value }}"
+        type="{{ item.type }}"
+        formControlName="{{ item.name }}"
+        ngDefaultControl
+      ></app-input>
+      <div class="checkboxs">
+        <p>Giới tính<span>(*)</span>:</p>
+        <div class="check">
+          <app-checkbox
+            *ngFor="let item of checkboxs"
+            title="{{ item.value }}"
+            formControlName="{{ item.name }}"
+            ngDefaultControl
+          ></app-checkbox>
+        </div>
+      </div>
+      <div class="birthday">
+        <p>Ngày sinh<span>(*)</span>:</p>
+        <div class="drop">
+          <app-dropdown
+            *ngFor="let item of dropdowns"
+            items="{{ item.value.join('*') }}"
+            widgth="130"
+            formControlName="{{ item.name }}"
+            ngDefaultControl
+          ></app-dropdown>
+        </div>
+      </div>
+      <app-input
+        title="Điện thoại"
+        formControlName="phone"
+        ngDefaultControl
+      ></app-input>
+      <div class="submit">
+        <p><span>(*)</span>Thông tin đăng ký</p>
+        <button (click)="onRegister()">ĐĂNG KÝ</button>
+      </div>
+    </form>
+    <div class="register">
+      <div class="facebook">
+        <span><i class="fab fa-facebook-f"></i></span>
+        <a href="#">Đăng ký bằng Facebook</a>
+      </div>
+      <div class="google">
+        <span><i class="fab fa-google-plus-g"></i></span>
+        <a href="#">Đăng ký bằng Google</a>
+      </div>
+    </div>
+    <div class="rules">
+      <ul>
+        <form [formGroup]="formGroup">
+          <li>
+            <input type="checkbox" formControlName="rules1" />
+            <p>
+              Tôi đồng ý với các <span>Chính Sách Và Quy Định Chung</span> của
+              KFC Vietnam
+            </p>
+          </li>
+          <li>
+            <input type="checkbox" formControlName="rules2" />
+            <p>Nhận tin từ KFC qua email.</p>
+          </li>
+        </form>
+        <li class="rules_last">
+          <p>
+            Hệ thống sẽ không đăng bài viết hoặc chia sẻ thông tin mà chưa được
+            sự đồng ý của bạn.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

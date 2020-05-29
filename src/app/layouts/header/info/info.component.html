@@ -1,0 +1,42 @@
+<div class="dropdown">
+  <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    {{ email }}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-item avatar">
+      <img src="{{ url }}" alt="" srcset="" />
+      <div class="name">
+        <p>{{ User["name"] }}</p>
+        <span><i class="fas fa-gift"></i>0</span>
+      </div>
+    </div>
+    <a class="dropdown-item" href="#"
+      ><i class="fas fa-user-cog"></i>Thông tin giao hàng</a
+    >
+    <a class="dropdown-item" href="#"
+      ><i class="fas fa-map-marker-alt"></i>Địa chỉ giao hàng</a
+    >
+    <a class="dropdown-item" href="#"
+      ><i class="fas fa-calendar-alt"></i>Lịch sử giao dịch</a
+    >
+    <a class="dropdown-item" href="#"
+      ><i class="far fa-grin-hearts"></i>Món ăn yêu thích</a
+    >
+    <a class="dropdown-item" href="#"
+      ><i class="fas fa-exclamation-circle"></i>Thông báo</a
+    >
+    <a class="dropdown-item" href="#"
+      ><i class="far fa-images"></i>Thư viện ảnh</a
+    >
+    <a class="dropdown-item logOut" href="#" (click)="logOut()"
+      ><i class="fas fa-sign-out-alt"></i>Đăng xuất</a
+    >
+  </div>
+</div>

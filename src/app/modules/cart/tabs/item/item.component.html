@@ -1,0 +1,36 @@
+<div class="item">
+  <div class="row header_item">
+    <div class="col-xl-6 name_item">
+      <button><i class="fas fa-pencil-alt"></i></button>
+      <button (click)="deleteItem()"><i class="fas fa-trash-alt"></i></button>
+      {{ name }}
+    </div>
+    <div class="col-xl-2 price_item">
+      <span>{{ price }}</span
+      >.000<span id="vnd">VNĐ</span>
+    </div>
+    <div class="col-xl-2 number_item">
+      <button (click)="onDown()">
+        <i class="fas fa-minus"></i>
+      </button>
+      <input type="text" name="" id="" value="{{ amount }}" />
+      <button (click)="onUp()">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    <div class="col-xl-2 Sum_item">
+      <span>{{ PriceFormat }}</span
+      >.000<span id="vnd">VNĐ</span>
+    </div>
+  </div>
+  <div class="row header_body">
+    <div class="col-xl-2">
+      <img src="{{ img }}" alt="" srcset="" />
+    </div>
+    <div class="col-xl-10">
+      <ul>
+        <li *ngFor="let item of list">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

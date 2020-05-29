@@ -1,0 +1,67 @@
+.food {
+  background: white;
+  .parent {
+    height: 248px;
+    overflow: hidden;
+    .img {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-color: black;
+      background-size: cover;
+      border-bottom: 4px #f1022a solid;
+      -webkit-transition: all .5s ease;
+      -moz-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+      -o-transition: all .5s ease;
+      transition: all .5s ease;
+    }
+    .img:hover {
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      -ms-transform: scale(1.2); /* IE 9 */
+      transform: scale(1.2);
+    }
+  }
+  .container {
+    padding: 0 50px;
+    .name {
+      font-size: 20px;
+      font-weight: bolder;
+    }
+    .content_bot {
+      display: flex;
+      justify-content: space-between;
+      .price {
+        color: #f1022a;
+        font-size: 18px;
+        font-weight: bolder;
+        .money {
+          font-size: 22px;
+        }
+        .vnd {
+          font-size: 20px;
+          margin-left: 7px;
+        }
+      }
+      button {
+        width: 24px;
+        height: 24px;
+        border: none;
+        padding: 0 auto;
+        i {
+          color: #f1022a;
+          font-weight: bolder;
+        }
+      }
+      button:hover {
+        background: #f1022a;
+        i {
+          color: white;
+        }
+      }
+    }
+  }
+}
+

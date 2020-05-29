@@ -1,0 +1,52 @@
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-body1">
+      <div class="intro">
+          <div class="container">
+              <div class="row intro_body">
+                <div class="col-xl-4 image" [ngStyle]="{'background-image':'url('+img+')'}">
+                    <div class="love">
+                        <div class='like'><i class="far fa-heart"></i></div>
+                        <span>{{like}}</span>
+                    </div>
+                </div>
+                <div class="col-xl-8 content">
+                  <div class="row decoration">
+                    <span></span><span></span><span class='last'></span>
+                  </div>
+                  <div class="row name">
+                      <p>{{name}}</p>
+                  </div>
+                  <div class="row list-food">
+                    <ul>
+                      <li *ngFor="let item of list">
+                        <i class="fa fa-circle"></i>
+                        <p>{{item}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class='exit' (click)='onClose()'>
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="row add_cart">
+                  <div class="input-group col-xl-4">
+                        <span>Số Lượng:</span>
+                        <button (click)='onDown()'>
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <input type="text" name="" id="" value="{{number}}">
+                        <button (click)='onUp()'>
+                          <i class="fas fa-plus"></i>
+                        </button>
+                  </div>
+                  <p class='col-xl-4 price'><span>{{price}}</span>.000 VNĐ</p>
+                  <button class='col-xl-4 btn_Cart' (click)='onAddCart()'>thêm vào giỏ hàng</button>
+              </div>
+            </div>
+      </div>
+     </div>
+   </div>
+
+  </div><!-- /.modal-content -->

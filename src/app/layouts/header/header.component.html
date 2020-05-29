@@ -1,0 +1,164 @@
+<header>
+  <div class="container">
+    <div class="row header_form">
+      <form [formGroup]="Form">
+        <select formControlName="select" (change)="onLocation()">
+          <option *ngFor="let item of citys" value="{{ item }}">{{
+            item
+          }}</option>
+        </select>
+      </form>
+      <div class="login_register">
+        <a
+          *ngIf="!isLogin"
+          class="login link"
+          href="#"
+          data-toggle="modal"
+          data-target="#exampleModalCenter"
+          >Đăng nhập</a
+        >
+        <app-info *ngIf="isLogin"></app-info>
+        <a *ngIf="!isLogin" [routerLink]="['/member']" class="link">Đăng ký</a>
+      </div>
+
+      <div class="languae">
+        <img src="/assets/img/lang-vn.png" alt="" srcset="" />
+        <img src="/assets/img/lang-en.png" alt="" srcset="" />
+      </div>
+    </div>
+    <div class="row logo">
+      <a [routerLink]="['/home']" routerLinkActive="router-link-active">
+        <img src="/assets/img/logo-vn.png" class="icon" alt="" srcset="" />
+      </a>
+      <img
+        src="/assets/img/giao-hang-vn.png"
+        class="giaohang"
+        alt=""
+        srcset=""
+      />
+    </div>
+    <div class="row mennu">
+      <ul>
+        <li class="icon_kfc">
+          <i class="fas fa-stream mobile_icon"></i>
+          <img src="/assets/img/logo-kfc.png" alt="" srcset="" />
+          <img
+            src="/assets/img/giao-hang-vn-mobile.png"
+            alt=""
+            class="mobile_img"
+          />
+          <i class="fas fa-shopping-cart" class="mobile_img"></i>
+        </li>
+        <li *ngFor="let item of items">
+          <a [routerLink]="[item.link]">
+            {{ item.content }}
+          </a>
+        </li>
+        <li class="cart">
+          <a [routerLink]="['/cart']"
+            ><i class="fas fa-shopping-cart"></i>GIỎ HÀNG<i
+              class="fas fa-caret-down"
+            ></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mennu_mobile">
+    <app-mennu-slider></app-mennu-slider>
+  </div>
+</header>
+<!-- Modal -->
+<div class="header_modal">
+  <div
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-decorate">
+          <span></span><span></span><span class="last"></span>
+        </div>
+        <div class="modal-body">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              <i class="fas fa-user-circle"></i>đăng nhập
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-form">
+            <form [formGroup]="myGroup">
+              <input type="text" placeholder="Email" formControlName="email" />
+              <input
+                type="password"
+                placeholder="Mật khẩu"
+                formControlName="password"
+              />
+              <span
+                *ngIf="
+                  myGroup.controls['email'].invalid &&
+                  myGroup.controls['email'].touched
+                "
+              >
+                email is invalid
+              </span>
+              <div class="form_active">
+                <div class="forget">
+                  <a href="#">Quên mật khẩu ?</a>
+                  <div class="submit"><input type="checkbox" />Ghi nhớ</div>
+                </div>
+                <button
+                  type="submit"
+                  (click)="OnSignUp()"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  Đăng Nhập
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="login">
+            <div class="facebook">
+              <span><i class="fab fa-facebook-f"></i></span>
+              <a href="#">Đăng nhập bằng Facebook</a>
+            </div>
+            <div class="google">
+              <span><i class="fab fa-google-plus-g"></i></span>
+              <a href="#">Đăng nhập bằng Google</a>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="footer_title">
+              <span>Bạn chưa có tài khoản?</span>
+            </div>
+          </div>
+          <div class="modal_register">
+            <a
+              [routerLink]="['/member']"
+              routerLinkActive="router-link-active"
+              data-dismiss="modal"
+              aria-label="Close"
+              >Đăng ký ngay</a
+            >
+          </div>
+        </div>
+        <div class="modal-decorate">
+          <span></span><span></span><span class="last"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

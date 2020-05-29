@@ -1,0 +1,65 @@
+<div class="mennu_food">
+  <div class="popup">
+    <div class="popup_banner"></div>
+    <div class="popup_title">
+      <div class="container">
+        <div class="row decorate">
+          <span></span>
+          <span></span>
+          <span class="last"></span>
+        </div>
+        <div class="row title">
+          <h1>thực đơn</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="exTab1" class="container">
+      <ul class="row nav nav-pills editMennu">
+        <li class="active col-xl-3 first">
+          <a href="#1a" data-toggle="tab">combo khuyến mãi</a>
+        </li>
+        <li class="col-xl-2">
+          <a href="#2a" data-toggle="tab">gà rán-quay</a>
+        </li>
+        <li class="col-xl-2">
+          <a href="#3a" data-toggle="tab">combo 1 người</a>
+        </li>
+        <li class="col-xl-2">
+          <a href="#4a" data-toggle="tab">combo 2 người</a>
+        </li>
+        <li class="col-xl-3 last">
+          <a href="#5a" data-toggle="tab">combo nhóm</a>
+        </li>
+      </ul>
+
+      <div class="row tab-content clearfix">
+        <div
+          [className]="
+            element.id == '1a'
+              ? 'tab-pane container active'
+              : 'tab-pane container'
+          "
+          id="{{ element.id }}"
+          style="width:100%"
+          *ngFor="let element of foods"
+        >
+          <div class="row item">
+            <app-card
+              class="col-xl-4"
+              *ngFor="let item of element['data']"
+              img="{{ item.img }}"
+              name="{{ item.name }}"
+              price="{{ item.price }}"
+              info="{{ item.info }}"
+              like="{{ item.like }}"
+              uid="{{ item['uid'] }}"
+              nameTable="{{ element['nameTable'] }}"
+            >
+            </app-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
